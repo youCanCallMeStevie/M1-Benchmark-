@@ -22,8 +22,13 @@ console.log(myObject);
 let myArray = ["yellow", "pink", "black", "white", "orange", "teal", "blue", "green", "hot pink", "burgundy"];
 
 // Print in the console every string in the previous array
-console.log(myArray.toString);
+// for (i = 0; i < myArray.length; i++)
+//     console.log(myArray[i]);  this prints the string individually
 
+let string = "";
+for (i = 0; i < myArray.length; i++)
+    string += myArray[i] + " "
+console.log(string) //this prints the string in one line
 
 //Create an array with 100 random numbers in it
 const randomNumber = [];
@@ -81,8 +86,8 @@ function reducer() {
 // Get element with ID "container" from the pag
 let containerElement = document.querySelector("#container");
 
-
-function textTD() { //Get every "td" from the page & Create a cycle that prints the text inside every td of the page
+//Get every "td" from the page & Create a cycle that prints the text inside every td of the page
+function textTD() {
     let tds = document.querySelectorAll("td");
     result = [];
     for (let i = 0; i < tds.length; i++) {
@@ -90,6 +95,7 @@ function textTD() { //Get every "td" from the page & Create a cycle that prints 
     }
     return result;
 }
+
 
 //Write a function to change the heading of the page 
 function ChangeHeader() {
@@ -110,7 +116,6 @@ function insert_Row() {
     three.innerHTML = "New Cell1";
     four.innerHTML = "New Cell2";
     five.innerHTML = "New Cell2";
-
 }
 
 
@@ -146,7 +151,15 @@ function addUL() {
 
 //Write a function to empty a list
 
+// function removeLI() {
+//     let OL = document.querySelector("li")
+//     document.querySelector('ol').removeChild(OL)
+// };
+//the above removed but not the LAST of the list, as I had wanted. the below work for the last
+
+
 function removeLI() {
-    let OL = document.querySelector("li")
-    document.querySelector('ol').removeChild(OL)
+    let menu = document.getElementById('menu');
+    menu.removeChild(menu.lastElementChild);
 };
+
